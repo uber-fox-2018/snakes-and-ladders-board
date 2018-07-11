@@ -26,4 +26,6 @@ function snakeNLaddersBoard(num = 10) {
     return arr.reverse();
 }
 
+console.log(snakeNLaddersBoard(15))
 console.log(snakeNLaddersBoard())
+console.log(snakeNLaddersBoard(8))

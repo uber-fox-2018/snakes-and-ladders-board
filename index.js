@@ -7,8 +7,23 @@ function snakesAndLadders(rows, cols) {
       arrNum.push(count);
       count--;
     }   
-    output.push(arrNum);
+    output.push(arrNum);    
   }
+
+  if(output.length % 2 !== 0) {
+    for(let i = 0; i < output.length; i++) {
+      if(i % 2 === 0) {
+        for(let j = 0; j < output[i].length-1; j++) {
+          if(output[i][j] > output[i][j+1]){
+            let tmp = output[i][j];
+            output[i][j] = output[i][j+1];
+            output[i][j+1] = tmp;
+            j = -1;
+          }
+        }
+      }
+    }
+  } 
 
   for(let i = 0; i < output.length; i++) {
     if(i % 2 !== 0) {
@@ -28,3 +43,5 @@ function snakesAndLadders(rows, cols) {
 }
 
 console.log(snakesAndLadders(10,10));
+console.log(snakesAndLadders(15,15));
+console.log(snakesAndLadders(8,8));
